@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="static/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="static/productStorage.js"></script>
+        <script src="static/productsHandler.js"></script>
+        <script src="static/displayProductHandler.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="navbar">
+                <div>
+                    <img src="static/images/logo2.png" width="260" height="60">
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="index.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="products.html">PRODUCTS</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services">SERVICES</a>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner" id="product-page-banner">
+            <div class="banner-gradient" id="product-gradient-banner">
+                <div class="banner-content" id="product-banner-content">
+                    <h1>Our Products</h1>
+                    <h2>Home &nbsp<span>></span>&nbsp Products</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content">
+            <div class="product-type-list">
+                <button class="product-type-btn">All Products</button>
+                <button class="product-type-btn">Sofas</button>
+                <button class="product-type-btn">Beds</button>
+                <button class="product-type-btn">Chairs</button>
+            </div>
+
+            <div id="product-content">
+            </div>
+
+            <div class="button-paginator">
+                <button id="first-page-btn">
+                    <span>First</span>
+                </button>
+                <button id="prev-page-btn">
+                    <span>Previous</span>
+                </button>
+                <button style="background-color: #cdac48;">
+                    <span id="page-number" style="color: white">1</span>
+                </button>
+                <button id="next-page-btn">
+                    <span>Next</span>
+                </button>
+                <button id="last-page-btn">
+                    <span>Last</span>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

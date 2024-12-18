@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="static/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.addEventListener('scroll', () => {
+                    let navBar = document.querySelector('nav');
+                    let logoImage = document.querySelector('#about-page-navbar img');
+                    let navLinks = document.querySelectorAll('#about-page-nav-text a');
+
+                    if (window.scrollY > 0) {
+                        navBar.style.backgroundColor = "white";
+                        navBar.style['boxShadow'] = '0 2px 10px rgba(0, 0, 0, 0.05)';
+                        logoImage.src = 'static/images/about-pages/logo6.png';
+                        logoImage.width = '190';
+                        for (let i = 0; i < navLinks.length; i++) {
+                            navLinks[i].style.color = 'rgb(50, 50, 50)';
+                        }
+                    }
+
+                    else {
+                        navBar.style.backgroundColor = "transparent";
+                        navBar.style['boxShadow'] = 'none';
+                        logoImage.src = 'static/images/about-pages/logo5.png';
+                        logoImage.width = '200'
+                        for (let i = 0; i < navLinks.length; i++) {
+                            navLinks[i].style.color = 'rgb(255, 255, 255)';
+                        }
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body id="about-page">
+        <nav>
+            <div id="about-page-navbar">
+                <div>
+                    <img src="static/images/about-pages/logo5.png" alt="ComFi Logo" width="200" height="80">
+                </div>
+                <div id="about-page-nav-text">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="products.html">Products</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services">Services</a>
+                        </li>
+                        <li>
+                            <a href="about.html" style="margin-right: 0">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="about-page-banner">
+            <div id="about-gradient-banner">
+                <div id="about-banner-content">
+                    <h1>About Us</h1>
+                    <h2>Excellent quality furniture</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-page-content">
+            <div style="display: flex; justify-content: space-between; flex-direction: row; place-items: center; 
+            padding: 5px; padding-left: 90px; padding-right: 90px;">
+                <div style="margin-right: 50px; width: 70%; text-align: center; margin: auto; ">
+                    <h1 style="color: rgb(50, 50, 50); font-size: 40px; font-weight: 500; margin-bottom: 30px">Who We Are</h1>
+                    <div class="border-line" style="margin: auto"></div>
+                    <div style="margin-top: 1em">
+                        <br>
+                        <p class="about-text" style="text-align: center">
+                            With a passion for craftsmanship and an unwavering commitment to quality, we curate a collection of sofas, beds, chairs, and more, designed to elevate your everyday living experience. 
+                            At ComFi, we believe that comfort is not just a luxury but a necessity in today's fast-paced world.
+                        </p>
+                        <br>
+                        <p class="about-text" style="text-align: center">
+                            We are dedicated to enhancing the quality of your life by providing an exquisite range of comfortable furniture that transforms your space into a haven of relaxation and tranquility.
+                            Each piece in our collection is meticulously crafted with the finest materials, ensuring durability, style, and, above all, comfort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; flex-direction: row; place-items: center; 
+            padding: 5px; padding-left: 90px; padding-right: 90px; margin-top: 5em; margin-bottom: 4em;">
+                <div style="padding: 60px; width: 60%; text-align: left; margin: auto;">
+                    <h1 style="color: rgb(50, 50, 50); font-size: 40px; font-weight: 500; margin-bottom: 30px">What We Do</h1>
+                    <div class="border-line" style="text-align: left;"></div>
+                    <div style="margin-top: 1em">
+                        <br>
+                        <p class="about-text" style="text-align: left">
+                            Our team of designers combines timeless elegance with modern sensibilities to create furniture that seamlessly integrates into any decor style, from contemporary chic to classic sophistication. Whether you're lounging with loved ones on a cozy sofa, sinking into the plush embrace of a luxurious bed, or unwinding in an ergonomically designed chair, ComFi furniture promises to envelop you in unparalleled comfort.
+                        </p>
+                    </div>
+                </div>
+                <div style="margin-top: 50px; text-align: center; width: 40%; margin: auto; padding: 50px">
+                    <img alt="who-we-are-sofa" src="static/images/about-pages/about-page1.jpeg" width="auto" height="400px" style="border-radius: 20px">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4em; background-color: white; padding-bottom: 20px">
+                <h1 style="color: rgb(50, 50, 50); font-size: 40px; font-weight: 500; margin-bottom: 10px">Our Founders</h1>
+                <div style="font-size: 20px; font-style: italic; margin-bottom: 30px; color: rgb(100, 100, 100)">Meet Our Team</div>
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                    <div style="padding: 30px; border-radius: 10px; margin: 20px;
+                    background-color: white;">
+                        <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)">
+                            <img src="static/images/founders/founder1.jpeg" width="100%" height="100%" style="object-fit: cover; object-position: right">
+                        </div>
+                        <div style="display: flex; 
+                        flex-direction: column; color: rgb(50, 50, 50)">
+                            <p style="font-size: 27px; font-weight: 500; margin-top: 20px">George Jabbons</p>
+                            <p style="font-size: 20px; font-weight: 400; color: rgb(120, 120, 120); font-style: italic;margin-top: 15px">CEO</p>
+                        </div>
+                    </div>
+                    <div style="padding: 30px; border-radius: 10px; margin: 20px; background-color: white;">
+                        <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)">
+                            <img src="static/images/founders/founder3.jpeg" width="100%" height="100%" style="object-fit: cover; object-position: top">
+                        </div>
+                        <div style="display: flex; 
+                        flex-direction: column; color: rgb(50, 50, 50)">
+                            <p style="font-size: 27px; font-weight: 500; margin-top: 20px">Sarah Kilensli</p>
+                            <p style="font-size: 20px; font-weight: 400; color: rgb(120, 120, 120); font-style: italic; margin-top: 15px">Co-founder</p>
+                        </div>
+                    </div>
+                    <div style="padding: 30px; border-radius: 10px; margin: 20px; background-color: white; ">
+                        <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)">
+                            <img src="static/images/founders/founder2.jpeg" width="100%" height="100%" style="object-fit: cover; object-position: right">
+                        </div>
+                        <div style="display: flex; 
+                        flex-direction: column; color: rgb(50, 50, 50);">
+                            <p style="font-size: 27px; font-weight: 500; margin-top: 20px">Amanda Wills</p>
+                            <p style="font-size: 20px; font-weight: 400; color: rgb(120, 120, 120); font-style: italic; margin-top: 15px">Head Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

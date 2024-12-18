@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="static/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                let itemName = localStorage.getItem('itemName');
+                let itemImage = localStorage.getItem('itemImage');
+                let itemPrice = localStorage.getItem('itemPrice');
+
+                document.querySelector('#single-product-title').innerHTML = itemName;
+                document.querySelector('#single-product-box-image img').src = itemImage;
+                document.querySelector('#single-product-price').innerHTML = itemPrice;
+            })
+        </script>
+    </head>
+    <body style="background-color: rgb(245, 245, 245)">
+        <nav>
+            <div class="navbar">
+                <div>
+                    <img src="static/images/logo2.png" width="220" height="50">
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="index.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="products.html">PRODUCTS</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services">SERVICES</a>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="single-product-container">
+            <div id="single-product-box">
+                <div id="single-product-box-image">
+                    <img alt="product-image" width="100%" height="100%">
+                </div>
+                <div id="single-product-box-content">
+                    <h1 id="single-product-title"></h1>
+                    <p id="single-product-price"></p>
+                    <p class="single-product-text">
+                        With a passion for craftsmanship and an unwavering commitment to quality, we curate a collection of sofas,
+                        beds, chairs, and more, designed to elevate your everyday living experience.
+                    </p>
+                    <p class="single-product-size">Size:</p>
+                    <div id="size-block-container">
+                        <button class="single-product-blocks">
+                            20 x 25
+                        </button>
+                        <button class="single-product-blocks">
+                            40 x 50
+                        </button>
+                        <button class="single-product-blocks">
+                            60 x 75
+                        </button>
+                    </div>
+                    <div id="update-cart-container">
+                        <div>
+                            <button class="single-product-blocks" id="plus-btn">
+                                +
+                            </button>
+                            <span>0</span>
+                            <button class="single-product-blocks" id="minus-btn">
+                                –
+                            </button>
+                        </div>
+                        <div style="flex: 2">
+                            <button class="single-product-cart-btn">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="static/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                let productListHtml = document.querySelector('.product-list');
+
+                for (let i = 0; i < 9; i++) {
+                    productListHtml.innerHTML += 
+                    `<a href="product.html" style="text-decoration: none">
+                            <div class="product slideshow">
+                            <div class="product-img"></div>
+                            <div class="product-section-1">
+                                <div class="product-title"></div>
+                            </div>
+                            <div class="product-section-2">
+                                <div class="box-p"></div>
+                                <div>
+                                    <button class="cart-btn">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    `;
+                }
+
+                displayProductHandler()
+
+                const products = {
+                    0: {title: "Royal Reign", price: 525}, // INCLUDE IMAGES
+                    1: {title: "White Bliss", price: 642},
+                    2: {title: "Natural Gold", price: 259},
+                    3: {title: "Aqua Leads", price: 422},
+                    4: {title: "Virgin Whites", price: 623},
+                    5: {title: "Maroon Peace", price: 295},
+                    6: {title: "Benjamin Bee", price: 458},
+                    7: {title: "Black Marvel", price: 456},
+                    8: {title: "Gold Grain", price: 509}
+                }
+
+                localStorage.setItem("products", JSON.stringify(products));
+
+                let productBox = document.querySelectorAll('.slideshow');
+
+                for (let i = 0; i < productBox.length; i++) {
+                    console.log(productBox[i]);
+
+                    let productTitle = JSON.parse(localStorage.getItem("products"))[i]['title'];
+                    let productPrice = JSON.parse(localStorage.getItem("products"))[i]['price'];
+
+                    productBox[i].querySelector('.product-title').innerHTML = productTitle;
+                    productBox[i].querySelector('.box-p').innerHTML = `Price: $${productPrice}.00`;
+                    productBox[i].querySelector('.product-img').innerHTML = `<img src="static/images/featured-collection/0${i+1}.avif">`;
+                }
+
+                // SLIDESHOW
+
+                let num = 0;
+                let screenWidth = screen.width;
+                let cardsDisplayed = parseInt(screenWidth / (280 + 100));
+                let productList = document.getElementsByClassName('slideshow');
+                let productLength = productList.length;
+
+                document.querySelector('#prev-btn').addEventListener('click', prevSlide);
+                document.querySelector('#next-btn').addEventListener('click', nextSlide);
+
+                for (let i = num; i < num + cardsDisplayed; i++) {
+                    productList[i % productLength].style.display = 'flex';
+                }
+
+                function nextSlide() {
+                    for (let i = num; i < num + cardsDisplayed; i++) {
+                        productList[i % productLength].style.display = 'none';
+                    }
+
+                    num = num + cardsDisplayed;
+
+                    for (let i = num; i < num + cardsDisplayed; i++) {
+                        productList[i % productLength].style.display = 'flex';
+                    }
+                }
+
+                function prevSlide() {
+                    for (let i = num; i < num + cardsDisplayed; i++) {
+                        productList[i % productLength].style.display = 'none';
+                    }
+
+                    num = num - cardsDisplayed;
+                    if (num < 0) {
+                        num = productLength - cardsDisplayed;
+                    }
+
+                    for (let i = num; i < num + cardsDisplayed; i++) {
+                        productList[i % productLength].style.display = 'flex';
+                    }
+                }
+
+                setInterval(nextSlide, 5000);
+            });
+            
+        </script>
+        <script src="static/displayProductHandler.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="navbar">
+                <div>
+                    <img src="static/images/logo2.png" width="260" height="60">
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="index.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="products.html">PRODUCTS</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services">SERVICES</a>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="main">
+            <div class="gradient">
+                <div class="main-text">
+                    <h1>Welcome to <span style="color: #BA972F">ComFi</span></h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in ex sem. 
+                        Phasellus nec nibh sit amet nibh luctus vulputate eu mollis diam. Nullam semper 
+                        tempor mi. Proin efficitur ultrices risus, id congue nulla tempus at.
+                    </p>
+                </div>
+                <div class="main-buttons">
+                    <button id="btn1">Show More</button>
+                    <button id="btn2">Contact</button>
+                </div>
+            </div>
+            <img src="static/images/index-bg.jpeg">
+        </div>
+
+        <div id="products-display">
+            <h1 class="title-design-1">Featured Collection</h1>
+            <div class="border-line"></div>
+            <div class="products-container">
+                <button id="prev-btn" class="arrow-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+                    </svg>
+                </button>
+                <div class="product-list"></div>
+                <button id="next-btn" class="arrow-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="services">
+            <div class="heading-style">
+                <h1>
+                    <div id="services-title">Our Services</div>
+                    <div id="services-quote">"Remarkable and Exceptional Customer Service" - Susan M.</div>
+                </h1>
+            </div>
+            <div class="services-container">
+                <div class="services-box" id="service-1">
+                    <div>
+                        <img src="static/images/services/money-bag.png" alt="money-bag">
+                    </div>
+                    <div class="service-box-title" style="font-size: 25px">Affordable Price</div>
+                    <div class="box-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Proin at metus id tortor consequat tempor eu egestas mi.
+                    </div>
+                    <button class="more-btn">MORE</button>
+                </div>
+                <div class="services-box" id="service-2">
+                    <div>
+                        <img src="static/images/services/excellent-service.png" alt="247-service">
+                    </div>
+                    <div class="service-box-title" style="font-size: 25px">Excellent Service</div>
+                    <div class="box-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Proin at metus id tortor consequat tempor eu egestas mi.
+                    </div>
+                    <button class="more-btn">MORE</button>
+                </div>
+                <div class="services-box" id="service-3">
+                    <div>
+                        <img src="static/images/services/enrich-experience.jpeg" alt="people-celebrating">
+                    </div>
+                    <div class="service-box-title" style="font-size: 25px">Enriching Experience</div>
+                    <div class="box-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Proin at metus id tortor consequat tempor eu egestas mi.
+                    </div>
+                    <button class="more-btn">MORE</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

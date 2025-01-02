@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="styles.css" rel="stylesheet">
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.slide');
+                const prevButton = document.querySelector('#prev-button');
+                const nextButton = document.querySelector('#next-button');
+                const sliderIcons = document.querySelectorAll('.slider-icon');
+
+                let pos = 0;
+                let oldPos = 0;
+
+                prevButton.addEventListener('click', () => {
+                    oldPos = pos
+                    pos = (pos <= 0) ? slides.length - 1 : pos - 1
+
+                    updateSlider()
+                })
+
+                nextButton.addEventListener('click', () => {
+                    oldPos = pos
+                    pos = (pos >= slides.length - 1) ? 0 : pos + 1
+
+                    updateSlider()
+                })
+
+                function updateSlider() {
+                    [slides[oldPos], sliderIcons[oldPos]].forEach(el => {el.classList.remove('active')});
+                    [slides[pos], sliderIcons[pos]].forEach(el => {el.classList.add('active')});
+                }
+            })
+        </script>
+    </head>
+    <body>
+
+        <nav>
+            <div id="navbar">
+                <div id="navbar-logo">
+                    <div class="company-logo">M</div>
+                    <span>Munchies</span>
+                </div>
+                <div id="navbar-links">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="products.html">Products</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                    </ul>
+                    <button class="nav-button">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HOMEPAGE MAIN BG SLIDER -->
+        <div id="slides-container">
+            <button class="slide-button" id="prev-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            </button>
+            <div id="slides-wrapper">
+
+                <!-- SLIDE 1 -->
+                <div class="slide active">
+                    <img src="images/01.jpg" alt="HD Image of a Chicken Veggie Burger and Side Onion Rings">
+
+                    <div class="darker-slide">
+                        <div class="slide-content">
+                            <h1>
+                                Welcome to Munchies
+                            </h1>
+
+                            <p>
+                                Pellentesque sollicitudin nunc ut nisl ultrices, a rhoncus est blandit. 
+                                Pellentesque habitant<br> mobi tristique senectus et netus et malesuada. 
+                                Nunc ut a rhoncus est blandit.
+                            </p>
+
+                            <div class="button-wrapper">
+                                <button class="button-1">
+                                    Learn More
+                                </button>
+                                <button class="button-2">
+                                    Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF SLIDE 1 -->
+
+                <!-- SLIDE 2 -->
+                <div class="slide">
+                    <img src="images/02.jpg" alt="HD Image of Fries and Side Dish">
+
+                    <div class="darker-slide">
+                        <div class="slide-content">
+                            <h1>
+                                Welcome to Munchies
+                            </h1>
+
+                            <p>
+                                Pellentesque sollicitudin nunc ut nisl ultrices, a rhoncus est blandit. 
+                                Pellentesque habitant<br> mobi tristique senectus et netus et malesuada. 
+                                Nunc ut a rhoncus est blandit.
+                            </p>
+
+                            <div class="button-wrapper">
+                                <button class="button-1">
+                                    Learn More
+                                </button>
+                                <button class="button-2">
+                                    Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF SLIDE 2 -->
+
+                <!-- SLIDE 3 -->
+                <div class="slide">
+                    <img src="images/03.jpg" alt="HD IMage of Crunchy Chicken Wings">
+
+                    <div class="darker-slide">
+                        <div class="slide-content">
+                            <h1>
+                                Welcome to Munchies
+                            </h1>
+
+                            <p>
+                                Pellentesque sollicitudin nunc ut nisl ultrices, a rhoncus est blandit. 
+                                Pellentesque habitant<br> mobi tristique senectus et netus et malesuada. 
+                                Nunc ut a rhoncus est blandit.
+                            </p>
+
+                            <div class="button-wrapper">
+                                <button class="button-1">
+                                    Learn More
+                                </button>
+                                <button class="button-2">
+                                    Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF SLIDE 3 -->
+
+                <div class="slider-icons-container">
+                    <span class="slider-icon active"></span>
+                    <span class="slider-icon"></span>
+                    <span class="slider-icon"></span>
+                </div>
+            </div>
+            <button class="slide-button" id="next-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        </div>
+    </body>
+</html>

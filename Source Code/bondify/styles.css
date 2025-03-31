@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* index.html */
+
+body#homepage {
+    background-color: white;
+    /* dark mode: rgb(22*3) */
+}
+
+#homepage nav {
+    background: white; /* dark mode: 22*3 */
+    width: 100%;
+    padding: 18px 0; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: 0 2px 15px rgba(196, 196, 196, 0.15) /* dark mode: 0*3, 0.15 */
+}
+
+#homepage nav > div {
+    display: flex;
+    place-items: center;
+    justify-content: center
+}
+
+#homepage ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none
+}
+
+#homepage nav li {
+    margin: 0 30px
+}
+
+#homepage nav li a {
+    color: rgb(50, 50, 50); /* dark mode: white */
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+#homepage nav li a:hover {
+    color: #2AF598
+}
+
+#homepage nav li.active {
+    border-bottom: 2px solid #2AF598
+}
+
+#homepage .green-blue-button {
+    background: linear-gradient(to right, #2AF598, #009EFD);
+    border-radius: 20px;
+    border: 0;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out
+}
+
+#homepage .green-blue-button:hover {
+    opacity: 0.6
+}
+
+#homepage nav .green-blue-button {
+    font-size: 14px;
+    padding: 9px 29px;
+    font-weight: 600
+}
+
+#homepage #main-poster-container {
+    width: 83%;
+    height: 88vh;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: center;
+    margin: auto
+}
+
+#homepage #main-poster-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 520px;
+    padding: 20px 60px;
+    place-items: center;
+    justify-content: space-between
+}
+
+#homepage #main-poster-wrapper .item-1 {
+    width: 470px;
+    height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    background: linear-gradient(to right, #2AF598, #009EFD);
+}
+
+@keyframes swing {
+    0% {
+        rotate: 0deg;
+        transform: scale(1.1)
+    }
+
+    25% {
+        rotate: 10deg
+    }
+
+    50% {
+        rotate: 0deg
+    }
+
+    75% {
+        rotate: -10deg
+    }
+
+    100% {
+        rotate: 0deg;
+        transform: scale(1.1)
+    }
+}
+
+#homepage #main-poster-wrapper .item-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: swing 5s infinite;
+}
+
+#homepage #main-poster-wrapper .item-2 {
+    width: 470px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(50, 50, 50) /* dark mode: white */
+}
+
+#homepage #main-poster-wrapper .item-2 h1 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 57px;
+    margin-bottom: 30px;
+}
+
+#homepage #main-poster-wrapper .item-2 span {
+    color: #2AF598
+}
+
+#homepage #main-poster-wrapper .item-2 p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 50px;
+}
+
+#homepage #main-poster-wrapper .item-2 .green-blue-button {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 30px;
+    width: 100%;
+}
+
+/* WEB_UIKITS.html */
+
+#meeting-page #root {
+    width: 100vw;
+    height: 100vh;
+}
+
+body#meeting-page {
+    background: linear-gradient(to right, #2AF598, #009EFD);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+#meeting-page .bondify-logo {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    height: 45px;
+    z-index: 1
+}
+
+#meeting-page div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+#meeting-page .bondify-logo a {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}

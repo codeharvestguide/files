@@ -36,8 +36,8 @@ window.onload = function () {
     const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
     const userID = Math.floor(Math.random() * 10000) + "";
     const userName = "userName" + userID;
-    const appID = 1257921940;
-    const serverSecret = "04067b94725d11cf3af4549ba8b6c4ee";
+    const appID = 0; /* get from zegocloud console */
+    const serverSecret = ""; /* get from zegocloud console */
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
 
     

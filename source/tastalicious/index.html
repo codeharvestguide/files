@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Tastalicious</title>
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="images/favicon.ico">
+        <script src="appHandler.js"></script>
+    </head>
+    <body>
+        <!-- HEADING -->
+        <nav>
+            <div id="page-heading">
+                <div class="nav-left">
+                    <img alt="Tastalicious" src="images/logo.png" height="44px">
+                </div>
+                <div class="nav-right">
+                    <div>
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                        </ul>
+                    </div>
+                    <button class="cart-button purple-pink-button">
+                        <img alt="Shopping Cart" src="images/cart.png" height="40px">
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- END OF HEADING -->
+
+        <!-- MAIN BODY -->
+        <div id="main-body">
+
+            <!-- SHOPPING CART -->
+            <div id="cart-window">
+                <div class="overlay"></div>
+                <div id="cart-box">
+
+                    <div class="heading">
+                        <div class="title-circle-container">
+                            <div class="purple-pink-circle"></div>
+                            <div>
+                                <h1>My Order</h1>
+                                <p>Quick Delivery</p>
+                            </div>
+                        </div>
+                        <button class="close-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M16.707,18.707a1,1,0,0,1-1.414-1.414L19.586,13H2a1,1,0,0,1,0-2H19.586L15.293,6.707a1,1,0,0,1,1.414-1.414l6,6a1,1,0,0,1,0,1.414Z"></path></g></svg>
+                        </button>
+                    </div>
+
+                    <div id="cart-items-container">
+                        <span class="empty-cart-message">Your cart is empty. Order an item.</span>
+
+                        <div class="white-fade-overflow top"></div>
+                        <ul>
+                        </ul>
+                        <div class="white-fade-overflow bottom"></div>
+                    </div>   
+
+                    <div id="cart-checkout">
+                        <div id="total-checkout">
+                            <p>Total:</p>
+                            <span class="price">$0.00</span>
+                        </div>
+
+                        <button id="checkout-button" class="purple-pink-button">
+                            Checkout
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- END OF SHOPPING CART -->
+
+            <!-- MENU CHOICES -->
+            <div id="menu-choices">
+                <ul>
+                    <li class="active">
+                        <img alt="All Food" src="images/menu-choices/all.png" width="20px" height="20px">
+                        <span>All</span>
+                    </li>
+                    <li>
+                        <img alt="French Fries" src="images/menu-choices/french-fries.png" width="20px" height="20px">
+                        <span>Fries</span>
+                    </li>
+                    <li>
+                        <img alt="Burger" src="images/menu-choices/burger.png" width="20px" height="20px">
+                        <span>Burger</span>
+                    </li>
+                    <li>
+                        <img alt="Fried Chicken" src="images/menu-choices/fried-chicken.png" width="20px" height="20px">
+                        <span>Chicken</span>
+                    </li>
+                    <li>
+                        <img alt="Salad" src="images/menu-choices/salad.png" width="20px" height="20px">
+                        <span>Salad</span>
+                    </li>
+                    <li>
+                        <img alt="Milkshake" src="images/menu-choices/milk-shake.png" width="20px" height="20px">
+                        <span>Milkshake</span>
+                    </li>
+                    <li>
+                        <img alt="Icecream" src="images/menu-choices/ice-cream.png" width="20px" height="20px">
+                        <span>Icecream</span>
+                    </li>
+                    <li>
+                        <img alt="Drinks" src="images/menu-choices/drinks.png" width="20px" height="20px">
+                        <span>Drinks</span>
+                    </li>
+                </ul>
+            </div> 
+            <!-- END OF MENU CHOICES-->
+
+            <!-- MENU -->
+            <div id="food-menu-container">
+                <div class="title-circle-container">
+                    <div class="purple-pink-circle"></div>
+                    <h1>
+                        Menu
+                    </h1>
+                </div>
+
+                <ul class="menu-list">
+
+                     <li>
+                        <div class="image-container">
+                            <img alt="Seasoned Fries" src="images/menu-list/fries/02.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Freddies Fries</p>
+                            <p class="price">$4.99</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image-container">
+                            <img alt="Vanilla Milkshake" src="images/menu-list/milkshake/03.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Milky Milkshake</p>
+                            <p class="price">$9.99</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="Crunchy Fried Chicken" src="images/menu-list/chicken/11.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Franky Chicken</p>
+                            <p class="price">$8.00</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="Chicken Cheesy Burger" src="images/menu-list/burger/01.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Benjamin Burger</p>
+                            <p class="price">$12.99</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="Chocolate Icecream In A Glass" src="images/menu-list/icecream/06.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Choco Icecream</p>
+                            <p class="price">$14.99</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="Strawberry" src="images/menu-list/drinks/02.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Strawberry Shake</p>
+                            <p class="price">$5.00</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="FOOD1" src="images/menu-list/fries/01.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Flaming Fries</p>
+                            <p class="price">$6.00</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="FOOD1" src="images/menu-list/chicken/08.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Chunky Nuggets</p>
+                            <p class="price">$3.99</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+                    
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="FOOD1" src="images/menu-list/drinks/01.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Mangolicious Shake</p>
+                            <p class="price">$8.00</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="image-container">
+                            <img alt="FOOD1" src="images/menu-list/icecream/05.png">
+                        </div>
+                        <div class="product-text">
+                            <p class="title">Cherry Blossom</p>
+                            <p class="price">$11.99</p>
+                            <button class="order-button purple-pink-button">Order</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- END OF MENU -->
+            
+        </div>
+        <!-- END OF MAIN BODY -->
+    </body>
+</html>
